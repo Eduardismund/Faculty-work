@@ -19,3 +19,5 @@ The following subjects have been given, in the following order:
 
 - **08.02.2024**: 
   Hamurabbi-915
+
+  **TIP**: Do not push code that isn't your own. If your submission is similar enough to others, you will likely receive a score of 0 and be suspected of plagiarism.
