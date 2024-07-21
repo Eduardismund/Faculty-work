@@ -1,14 +1,5 @@
-# Algebra Course Projects
+# Algebra
 
-During the Algebra Course, I have worked on the following optional projects:
+For this course, besides the 14 seminaries, I have worked on 3 optional projects which led to a better grade and can be found in the 'Projects' folder.
 
-- **Project 2**: 
-  Input a non-zero natural number \( n \). Show the number of associative operations on a set \( A = \{a1, a2,..., an\} \) and the operation table of each operation (for  n <= 4 ).
-
-- **Project 4**: 
-  Input a non-zero natural number \( n \). Compute the number of \( k \)-dimensional subspaces of the \( n \)-dimensional vector space over the field \( Z_2 \) and provide a basis for each subspace.
-
-- **Project 5**: 
-  Input two natural numbers \( m \) and \( n >= 2 \). Compute the number of matrices \( A \) belonging to \( M_{m,n} \) in reduced echelon form and list the matrices (for \( m \<= 5 \) and \( 2 \<= n \<= 5 \)).
-
-  Aditionally, in the folder 'Exams' there can be found a few exams both from the Midterm and the final exam.
+Besides that, I was able to provide a few exam models from this year, both from the midterm and the final exam, which can be found in the 'Exams' folder.
