@@ -1,5 +1,5 @@
 # Mathematical Analysis
 
-During the Mathematical Analysis Course, I have worked on 13 homeworks following each week's seminar that I have posted in the 'Homeworks' folder.
+Throughout the Mathematical Analysis course, I completed 13 homework assignments corresponding to each week's seminar. These assignments can be found in the 'Homeworks' folder.
 
-Also, I have provided photos with the midterm and the final exam, posted in the 'Exams' folder. 
+Additionally, I have included photos of both the midterm and final exams in the 'Exams' folder.
