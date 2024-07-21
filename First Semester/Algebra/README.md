@@ -10,3 +10,5 @@ During the Algebra Course, I have worked on the following optional projects:
 
 - **Project 5**: 
   Input two natural numbers \( m \) and \( n >= 2 \). Compute the number of matrices \( A \) belonging to \( M_{m,n} \) in reduced echelon form and list the matrices (for \( m \<= 5 \) and \( 2 \<= n \<= 5 \)).
+
+  Aditionally, in the folder 'Exams' there can be found a few exams both from the Midterm and the final exam.
