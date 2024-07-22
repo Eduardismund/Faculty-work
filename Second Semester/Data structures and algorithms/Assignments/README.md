@@ -18,3 +18,5 @@ The assignments contributed to the final grade, each having a different proporti
   
 - **Assignment 5 - Task 1**: ADT Matrix, where elements (triplets <line, column, value>) are stored in a BST with linked representation and dynamic allocation
   - Graded 10/10.
+
+At each assignment it was also needed to solve an extra operation, as you can find in the folder 'extra_operation'. The order of the extra operations may not necessarily match the one I gave.
