@@ -1,0 +1,4 @@
+The EXPECTED number of associative operations on a set with 1 elements is 1
+(a1)
+
+The number of associative operations on a set with 1 elements is 1

@@ -1,0 +1,2 @@
+The EXPECTED number of associative operations on a set with 0 elements is 0
+The number of associative operations on a set with 0 elements is 0
