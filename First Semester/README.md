@@ -2,8 +2,8 @@
 
 ## Ranking of these subjects based on getting the maximum grade:
 
-- 😃 [**Algebra**](Algebra/README.md)
-- 🙂 [**Fundamentals of Programming**](Fundamentals_of_Programming/README.md)
+- 😃 [**Algebra**](Algebra)
+- 🙂 [**Fundamentals of Programming**](Fundamentals of Programming/README.md)
 - 😐 [**Mathematical Analysis**](Mathematical_Analysis/README.md)
 - 😕 [**Computational Logic**](Computational_Logic/README.md)
 - 😫 [**Computer Systems Architecture**](Computer_Systems_Architecture/README.md)
