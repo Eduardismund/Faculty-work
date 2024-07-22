@@ -1,0 +1,12 @@
+22,346,Electricity
+15,829,Gas
+3,910,Clothes
+27,104,Electricity
+28,678,Food
+29,140,Water
+22,555,Clothes
+26,452,Gas
+2,345,Gas
+8,354,Clothes
+10,1000,Parking
+20,2000,Vacation

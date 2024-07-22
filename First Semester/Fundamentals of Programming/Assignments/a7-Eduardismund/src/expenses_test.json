@@ -1,0 +1,62 @@
+[
+ {
+  "day": 26,
+  "amount": 788,
+  "type": "Water"
+ },
+ {
+  "day": 2,
+  "amount": 504,
+  "type": "Clothes"
+ },
+ {
+  "day": 14,
+  "amount": 742,
+  "type": "Telephone"
+ },
+ {
+  "day": 21,
+  "amount": 8,
+  "type": "Electricity"
+ },
+ {
+  "day": 24,
+  "amount": 55,
+  "type": "Insurance"
+ },
+ {
+  "day": 22,
+  "amount": 635,
+  "type": "Telephone"
+ },
+ {
+  "day": 23,
+  "amount": 978,
+  "type": "Insurance"
+ },
+ {
+  "day": 21,
+  "amount": 177,
+  "type": "Gas"
+ },
+ {
+  "day": 29,
+  "amount": 608,
+  "type": "Gas"
+ },
+ {
+  "day": 1,
+  "amount": 173,
+  "type": "Gas"
+ },
+ {
+  "day": 10,
+  "amount": 1000,
+  "type": "Parking"
+ },
+ {
+  "day": 20,
+  "amount": 2000,
+  "type": "Vacation"
+ }
+]

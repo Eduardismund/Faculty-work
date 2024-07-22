@@ -1,0 +1,77 @@
+[
+ {
+  "day": 9,
+  "amount": 532,
+  "type": "Fuel"
+ },
+ {
+  "day": 12,
+  "amount": 815,
+  "type": "Fuel"
+ },
+ {
+  "day": 20,
+  "amount": 490,
+  "type": "Fuel"
+ },
+ {
+  "day": 18,
+  "amount": 660,
+  "type": "Water"
+ },
+ {
+  "day": 14,
+  "amount": 599,
+  "type": "Insurance"
+ },
+ {
+  "day": 23,
+  "amount": 539,
+  "type": "Insurance"
+ },
+ {
+  "day": 4,
+  "amount": 217,
+  "type": "Gas"
+ },
+ {
+  "day": 26,
+  "amount": 868,
+  "type": "Water"
+ },
+ {
+  "day": 1,
+  "amount": 497,
+  "type": "Fuel"
+ },
+ {
+  "day": 5,
+  "amount": 213,
+  "type": "Electricity"
+ },
+ {
+  "day": 17,
+  "amount": 965,
+  "type": "Electricity"
+ },
+ {
+  "day": 18,
+  "amount": 133,
+  "type": "Telephone"
+ },
+ {
+  "day": 10,
+  "amount": 918,
+  "type": "Clothes"
+ },
+ {
+  "day": 17,
+  "amount": 421,
+  "type": "Clothes"
+ },
+ {
+  "day": 13,
+  "amount": 220,
+  "type": "Clothes"
+ }
+]

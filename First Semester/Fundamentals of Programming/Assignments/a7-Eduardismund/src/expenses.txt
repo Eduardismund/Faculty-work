@@ -1,0 +1,6 @@
+15,1000,Telephone
+18,937,Insurance
+19,917,Electricity
+27,953,Electricity
+23,828,Clothes
+22,832,Telephone
