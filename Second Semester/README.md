@@ -2,9 +2,9 @@
 
 ## Ranking of these subjects based on getting the maximum grade:
 
-- 😃 [**Algebra**](Algebra/) (Prof. CRIVEI Septimiu)
-- 🙂 [**Fundamentals of Programming**](Fundamentals%20of%20Programming/) (Lect. MOLNAR Arthur)
-- 😐 [**Mathematical Analysis**](Mathematical%20Analysis/) (Lect. NECHITA Mihai)
+- 😃 [**Geometry**](Geometry/) (Lect. SIMION Iulian)
+- 🙂 [**Graph algorithms**](Graph%20algorithms/) (Lect. LUPSA Radu)
+- 😐 [**Object oriented programming**](Object%20oriented%20programming/) (Conf. BOCICOR Maria Iuliana)
 - 😕 [**Computational Logic**](Computational%20Logic/) (Lect. LUPEA Mihaiela)
 - 😫 [**Computer Systems Architecture**](Computer%20Systems%20Architecture/) (Lect. VANCEA Alexandru)
 
