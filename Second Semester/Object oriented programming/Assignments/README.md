@@ -36,7 +36,7 @@ I've also solved all the bonuses and this resulted in 0.6p added to the final gr
 - **Assignment 10**: 
   Graded 10/10.
 
-For the 2 tests I recieved the following subjects: ZOO and Taxi Simulator. 
+For the 3 tests I recieved the following subjects: Tennis Players, Buildings and Equations. 
 
 ## Test Grades
 
@@ -44,4 +44,7 @@ For the 2 tests I recieved the following subjects: ZOO and Taxi Simulator.
   Graded 10/10.
 
 - **Test 2**: 
+  Graded 10/10.
+
+- **Test 3**: 
   Graded 10/10.
