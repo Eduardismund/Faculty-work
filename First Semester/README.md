@@ -1,25 +1,44 @@
-# Subject Ranking
+# Semester Overview
 
-## Ranking of these subjects based on getting the maximum grade:
+## List of Subjects
+- [**Algebra**](Algebra/) (Prof. CRIVEI Septimiu)
+- [**Computational Logic**](Computational%20Logic/) (Lect. LUPEA Mihaiela)
+- [**Computer Systems Architecture**](Computer%20Systems%20Architecture/) (Lect. VANCEA Alexandru)
+- [**Fundamentals of Programming**](Fundamentals%20of%20Programming/) (Lect. MOLNAR Arthur)
+- [**Mathematical Analysis**](Mathematical%20Analysis/) (Lect. NECHITA Mihai)
 
-- 😍 [**Algebra**](Algebra/) (Prof. CRIVEI Septimiu)
-- 😎 [**Fundamentals of Programming**](Fundamentals%20of%20Programming/) (Lect. MOLNAR Arthur)
-- 😐 [**Mathematical Analysis**](Mathematical%20Analysis/) (Lect. NECHITA Mihai)
-- 😖 [**Computational Logic**](Computational%20Logic/) (Lect. LUPEA Mihaiela)
-- 😤 [**Computer Systems Architecture**](Computer%20Systems%20Architecture/) (Lect. VANCEA Alexandru)
+## Grades
 
-## Ranking of these subjects based on how easy it is to pass the subject:
+Here is a summary of the grades received for each subject along with the final grade:
 
-- 🥱 [**Mathematical Analysis**](Mathematical%20Analysis/) (Lect. NECHITA Mihai)
-- 🤗 [**Algebra**](Algebra/) (Prof. CRIVEI Septimiu)
-- 🫠 [**Computational Logic**](Computational%20Logic/) (Lect. LUPEA Mihaiela)
-- 😫 [**Fundamentals of Programming**](Fundamentals%20of%20Programming/) (Lect. MOLNAR Arthur)
-- 😭 [**Computer Systems Architecture**](Computer%20Systems%20Architecture/) (Lect. VANCEA Alexandru)
+- **Algebra**: Grade - 10/10
+- **Computational Logic**: Grade - 8/10
+- **Computer Systems Architecture**: Grade - 8/10
+- **Fundamentals of Programming**: Grade - 10/10
+- **Mathematical Analysis**: Grade - 9/10
 
-## Ranking of these subjects based on the need to attend course lectures:
+**Final Grade for the Semester**: 9.00
 
-- [**Computer Systems Architecture**](Computer%20Systems%20Architecture/) (Lect. VANCEA Alexandru): 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜
-- [**Mathematical Analysis**](Mathematical%20Analysis/) (Lect. NECHITA Mihai): 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜
-- [**Computational Logic**](Computational%20Logic/) (Lect. LUPEA Mihaiela): 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜
-- [**Fundamentals of Programming**](Fundamentals%20of%20Programming/) (Lect. MOLNAR Arthur): 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜
-- [**Algebra**](Algebra/) (Prof. CRIVEI Septimiu): 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜
+## Ranking of These Subjects Based on Getting the Maximum Grade:
+
+- 😍 [**Mathematical Analysis**](Mathematical%20Analysis/)
+- 😎 [**Algebra**](Algebra/)
+- 😐 [**Fundamentals of Programming**](Fundamentals%20of%20Programming/)
+- 😖 [**Computational Logic**](Computational%20Logic/)
+- 😤 [**Computer Systems Architecture**](Computer%20Systems%20Architecture/)
+
+## Ranking of These Subjects Based on How Easy It Is to Pass the Subject:
+
+- 🥱 [**Mathematical Analysis**](Mathematical%20Analysis/)
+- 🤗 [**Algebra**](Algebra/)
+- 🫠 [**Computational Logic**](Computational%20Logic/)
+- 😫 [**Fundamentals of Programming**](Fundamentals%20of%20Programming/)
+- 😭 [**Computer Systems Architecture**](Computer%20Systems%20Architecture/)
+
+## Ranking of These Subjects Based on the Need to Attend Course Lectures:
+
+- [**Computer Systems Architecture**](Computer%20Systems%20Architecture/): 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜
+- [**Mathematical Analysis**](Mathematical%20Analysis/): 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜
+- [**Computational Logic**](Computational%20Logic/): 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜
+- [**Fundamentals of Programming**](Fundamentals%20of%20Programming/): 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜
+- [**Algebra**](Algebra/): 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜
