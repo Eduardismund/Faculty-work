@@ -1,6 +1,6 @@
 # Assignments
 
-The assignments contributed to the final grade, their median having a 40% impact on the final grade.
+The assignments contributed to the final grade, their median having a 40% impact on the final grade. They were solved one after another in the same project.
 
 I've also solved the bonus which required implementing the first assignment in C++ (adding approximately 0.5 points to the **final** grade).
 ## Assignment Grades
