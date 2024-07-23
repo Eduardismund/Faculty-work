@@ -1,0 +1,351 @@
+RO: Se da fisierul a.log de mai jos in care un server concurent a scris evenimentele aparute pe parcursul rezolvarii diferitelor cereri. Fiecare eveniment apare pe o singura linie si are formatul: data ora tip cerere detalii. 
+Scrieti un script Shell UNIX care separa liniile din a.log in fisiere separate (cate unul pentru fiecare cerere) si afiseaza un top al cererilor in functie de numarul de erori aparute in procesarea ei.
+
+File a.log content:
+2021-07-01 12:01:33 info req1 doing action a
+2021-07-01 12:01:33 info req2 doing action b1 and b2
+2021-07-01 12:01:35 info req3 doing action c
+2021-07-01 12:01:35 info req1 doing action d quickly
+2021-07-01 12:01:37 debug req1 doing action e and it may cause an error or two
+2021-07-01 12:01:38 error req1 failed doing action f
+2021-07-01 12:01:39 debug req3 doing action g bot not liking it
+2021-07-01 12:01:40 error req2 doing action h which is a weird corner case
+2021-07-01 12:01:40 info req1 doing action i
+2021-07-01 12:01:40 error req2 doing action j
+
+
+
+
+#!/bin/bash
+
+LOG_FILE="a.log"
+mkdir requests
+
+while read -r line; do
+    request=$(echo "$line" | awk '{print $3}')
+    echo "$line" >> "requests/$request.log"
+done < "$LOG_FILE"
+
+for file in requests/*.log; do
+    request=$(basename "$file" .log)
+    error_count=$(grep -c 'error' "$file")
+    if [ "$error_count" -gt 0 ]; then
+        echo "$error_count $request" >> error_counts.txt
+    fi
+done
+
+sort -nr error_counts.txt
+rm error_counts.txt
+
+
+
+
+
+
+
+
+
+
+
+
+EN: Give a regular expression that matches any even-length sequence of lower-case words separated by spaces, 
+if for each word its length and its position in the sequence are either both odd or both even. The words ware counted starting with 1. Ex: the 5th word must have odd length and the 16th word must of even length.
+
+
+
+
+
+EN: Give three GREP commands that display the lines of a file which consist exclusively of a non-empty sequence of alternating leters and digits (eg a0g or 1r5m)
+
+
+grep -E '^(([a-zA-Z][0-9])+|([0-9][a-zA-Z])+$)' filename
+grep -E '^[a-zA-Z][0-9]([a-zA-Z][0-9])*|^[0-9][a-zA-Z]([0-9][a-zA-Z])*$' filename
+grep -E '^([a-z][0-9])+$|^([0-9][a-z])+$' filename
+
+
+
+EN: Write two SED commands that display a file's lines deleting the first non-empty sequence of lower-case letters
+
+sed -E 's/[a-z]+//' filename
+sed 's/[a-z][a-z]*//' filename
+
+
+
+
+EN: Write an AWK command that displays the sum of all the numbers in a text file whose lines consist of sequences of digits separated by spaces.
+
+awk '{for (i=1; i<=NF; i++) sum += $i} END {print sum}' filename
+
+
+
+
+
+
+EN: Give three ways of finding the size of a file on the Linux command line.
+
+
+stat -f %z filename
+ls -lh filename
+du -h filename
+
+
+
+
+EN: Write a UNIX Shell condition that checks whether a file exists and the current user has any permissions on it.
+
+if [ -e filename ] && [ -r filename -o -w filename -o -x filename ];
+
+
+
+
+EN: Draw the hierarchy of processes created by the code below, including the parent process.
+
+    for(i=0; i<3; i++) {
+        if(fork() > 0) {
+            wait(0);
+            wait(0);
+            exit(0);
+        }
+    }
+
+P0
+ └── P1
+      └── P2
+           └── P3
+
+
+
+
+
+
+
+EN: What will the fragment below print? Justify your answer.
+
+    execl("expr", "expr", "1", "+", "1", NULL);
+    execlp("echo", "echo", "3", NULL);
+    printf("4\n");
+
+if execl succeeds then 2
+if not but execlp succeeds then 3
+otherwise 4
+if one of the execl or execlp commands have no issue running then the code after will not get executed 
+
+
+
+
+
+
+
+EN: Explain why the file descriptor returned by popen must be closed with pclose instead of fclose.
+
+
+The file descriptor returned by popen must be closed with pclose instead of fclose to prevent creating zombie processes and to properly handle the termination status of the child process
+
+
+
+
+
+
+
+
+
+
+EN: How many FIFOs can a process open for reading if the FIFOs are and will ever be used by other processes only for writing?
+
+
+The number of FIFOs a process can open for reading is primarily limited by the maximum number of file descriptors that the process can open simultaneously. 
+This limit is typically determined by the system's file descriptor limit for a single process.
+
+
+
+
+
+
+
+
+EN: When would you use execv instead of execl?
+
+Use execv instead of execl when the command-line arguments are stored in an array, allowing for dynamic or runtime-determined arguments.
+
+
+
+
+
+
+EN: What is a "critical section"?
+
+
+a critical section refers to a segment of code that is executed by multiple concurrent threads or processes
+and where shared resources are accessed and modified.
+
+
+
+
+
+
+
+EN: Give three function calls that ensure mutual exclusion.
+
+pthread_mutex_lock(&mutex);
+sem_wait(&sem);
+std::unique_lock<std::mutex> lock(mutex);
+
+
+
+
+EN: What will be the effect of replacing calls to pthread_mutex_lock with calls to sem_post?
+
+
+Loss of Mutual Exclusion:
+
+pthread_mutex_lock ensures that only one thread can access the critical section at a time.
+Replacing it with sem_post would not provide mutual exclusion. Instead, it would signal the semaphore, 
+potentially allowing multiple threads to proceed simultaneously.
+
+
+Incorrect Synchronization:
+
+Semaphores are generally used for signaling and resource counting, not for mutual exclusion.
+Using sem_post instead of pthread_mutex_lock would disrupt the synchronization logic. For example, 
+sem_post without a corresponding sem_wait would lead to an unbalanced semaphore count.
+
+
+Race Conditions:
+
+The critical section could be accessed by multiple threads concurrently, leading to race conditions.
+Shared resources might be accessed or modified simultaneously, causing data corruption or inconsistencies.
+
+
+Deadlocks:
+
+The original synchronization logic might involve proper usage of pthread_mutex_lock and pthread_mutex_unlock to prevent deadlocks.
+Replacing pthread_mutex_lock with sem_post would break this logic, potentially leading to deadlocks or livelocks if threads 
+wait indefinitely for resources that are never properly signaled.
+
+
+
+
+
+
+
+
+EN: What could happen if function f were executed by several simultaneous threads? Why?
+
+pthread_mutex_t m[2];
+void* f(void* p) {
+    int id = (int)p;
+    pthread_mutex_t* first = &m[id % 2];
+    pthread_mutex_t* second = &m[(id+1) % 2];
+
+    pthread_mutex_lock(first);
+    pthread_mutex_lock(second);
+    ...
+    pthread_mutex_unlock(second);
+    pthread_mutex_unlock(first);
+}
+
+
+Simultaneous execution of function f by multiple threads can cause deadlock due to circular waiting, as threads may lock the mutexes in opposite orders.
+
+
+
+
+
+
+
+EN: Give an example of distinct values greater than 0 for T, N1, N2, and N3 for which the program below finishes execution.
+
+pthread_barrier_t b1, b2;
+
+void* f1(void* a) {
+    pthread_barrier_wait(&b1);
+    return NULL;
+}
+
+void* f2(void* a) {
+    pthread_barrier_wait(&b2);
+    return NULL;
+}
+
+int main() {
+    int i;
+    pthread_t t[T][2];
+
+    pthread_barrier_init(&b1, NULL, N1);
+    pthread_barrier_init(&b2, NULL, N2);
+    for(i=0; i<T; i++) {
+        pthread_create(&t[i][0], NULL, f1, NULL);
+        pthread_create(&t[i][1], NULL, f2, NULL);
+    }
+    for(i=0; i<T; i++) {
+        pthread_join(t[i][0], NULL);
+        pthread_join(t[i][1], NULL);
+    }
+    pthread_barrier_destroy(&b1);
+    pthread_barrier_destroy(&b2);
+    return NULL;
+}
+
+Answer:
+
+
+
+
+
+
+
+
+
+EN: What can you do as a software developer to prevent deadlocks?
+
+
+
+Lock Ordering: Acquire multiple locks in a predefined order to avoid circular waits.
+Justification: Ensures a consistent lock acquisition sequence, preventing circular wait conditions.
+
+Lock Timeout: Use timeouts for lock acquisition to prevent indefinite waiting.
+Justification: Allows threads to give up and retry, preventing indefinite blocking and potential deadlocks.
+
+Deadlock Detection: Implement periodic checks to detect and resolve deadlocks.
+Justification: Identifies and addresses deadlocks dynamically, though it may add some performance overhead.
+
+Resource Allocation Order: Request resources in a specific hierarchical order to avoid circular dependencies.
+Justification: Prevents circular wait by ensuring a consistent order of resource acquisition.
+
+Single Lock for Multiple Resources: Use one lock to protect access to multiple resources, reducing lock complexity.
+Justification: Simplifies lock management and minimizes the chances of deadlocks by reducing the number of locks.
+
+Avoid Nested Locks: Minimize the use of nested locks to simplify lock management and prevent deadlocks.
+Justification: Reduces the risk of deadlocks by avoiding complex locking scenarios.
+
+Resource Preemption: Allow resources to be preempted and reassigned to other threads to break circular waits.
+Justification: Breaks circular wait conditions by reallocating resources, though it requires careful management to avoid data corruption.
+
+
+
+
+
+
+
+
+
+EN: What state transition will a process undergo when it calls sem_wait and under what conditions? Justify your answer.
+
+
+When a process calls sem_wait, it transitions from running to blocked if the semaphore value is 0, otherwise, it continues running.
+This transition occurs because sem_wait decrements the semaphore; if the value is 0, it indicates no available resources, causing the process to block until the semaphore is incremented.
+
+
+EN: Considering that the size of a block is B and the size of and address is A, how many data blocks are addressed by the double indirect addressing of an i-node?
+
+(B/A)^2
+
+
+
+
+
+
+EN: When would you load into memory the pages of a process that is just starting?
+
+at the start
+

@@ -1,0 +1,242 @@
+EN: Give three regular expressions that match any non-negative number multiple of 5.
+
+^(0|[1-9][0-9]*0|5|[1-9][0-9]*5)$
+^0$|^[1-9][0-9]*0$|^[1-9][0-9]*5$
+^[0-9]*[05]$
+
+
+
+
+
+EN: Give five GREP commands that display all the lines in a file that contain letter "a" uppercase or lowercase.
+
+grep -E '[aA]' fisier
+grep -E -i 'a' fisier
+grep -E -i 'A' fisier
+grep -E '[Aa]+' fisier
+grep -E '[aA]{1,}' fisier
+
+
+
+
+
+EN: Write two SED commands that display from a file only the lines that do not contain digit 7.
+sed -n /7/d fisier
+sed -E "/[7]{1,}/d" fisier
+
+
+EN: Write an AWK command that displays the sum of the next to last field of all lines.
+awk '{sum += $(NF-1)} END {print sum}' filename
+
+
+
+
+EN: How can you redirect on the command line the standard error through pipe to another program?
+command 2>&1 | other_program
+
+'command' is the original command whose error you want to redirect
+2>&1 redirects stderr (file descriptor 2) to stdout (file descriptor 1).
+
+
+
+
+RO: Scrieţi un script Shell UNIX care afişează toate argumentele din linia de comandă fără a folosi FOR.
+EN: Write a UNIX Shell script that displays all command line arguments without using FOR
+
+echo $*
+
+
+
+
+RO: Desenati ierarhia proceselor create de codul de mai jos, incluzand procesul parinte.
+EN: Draw the hierarchy of processes created by the code below, including the parent process.
+
+    for(i=0; i<3; i++) {
+        fork();
+        execlp("ls", "ls", "/", NULL);
+    }
+   P
+ / | \
+c1 C2 C3
+
+RO: Adăugaţi liniile de cod C necesare pentru ca instrucţiunea de mai jos să suprascrie conţinutul unui fişier b.txt. Nu modificaţi instrucţiunea.
+EN: Add the necessary lines of C code so that the instruction below overwrites the content of a file b.txt. Do not change the instruction.
+
+    execlp("cat", "cat", "a.txt", NULL);
+
+
+
+
+EN: Why is it not advisable to communicate bidirectionally through a single FIFO?
+
+Because trying to use the same FIFO for bidirectional communication can lead to blocking,potential deadlocks,data collision and simply becuase implementing proper synchronization
+mechanisms to handle bidirectional communication in a single FIFO adds significant complexity to the code.
+
+
+
+
+EN: How many FIFOs can a process open if they are not and will not ever be used by any other process?
+
+
+
+A process can open a number of FIFOs limited by the maximum number of file descriptors that the process can open simultaneously. 
+This limit is typically determined by the system's file descriptor limit for a single process.
+
+
+
+
+
+
+EN: When would you prefer using a process instead of a thread?
+
+
+
+When developing a web application that requires both a web server and a database server. Each service needs to be robust and isolated to ensure that a failure in one does not affect the other.
+The web server and database server run in separate processes. If the web server crashes, the database server continues to run unaffected.
+
+
+
+
+
+EN: What is a "critical section"?
+
+
+a critical section refers to a segment of code that is executed by multiple concurrent threads or processes
+and where shared resources are accessed and modified.
+
+
+
+
+
+
+EN: Why should the thread recheck the condition after returning from the pthread_cond_wait call?
+
+
+Rechecking the condition after returning from pthread_cond_wait is crucial because:
+
+Spurious wakeups can cause the thread to wake up without the condition being met.
+Lost wakeup signals can result in the thread missing a condition change.
+
+By using a loop to recheck the condition, the thread ensures correct behavior and synchronization, preventing potential errors and ensuring that it only proceeds when the condition is truly met.
+
+
+
+
+
+
+
+EN: What will be the effect of replacing calls to pthread_mutex_lock with calls to pthread_rwlock_rdlock?
+
+
+Replacing pthread_mutex_lock with pthread_rwlock_rdlock allows multiple threads to read concurrently, increasing read performance,
+but writing operations may be indefinitely blocked if read locks are continuously held. 
+Managing synchronization becomes more complex to ensure data consistency between read and write operations.
+
+
+
+
+EN: What is the effect of calling pthread_barrier_wait on a barrier initialized with 1?
+
+
+When a thread calls pthread_barrier_wait on a barrier initialized with a count of 1, 
+it will immediately cross the barrier without waiting, as it is the only thread needed to reach the barrier for it to be considered complete.
+
+
+
+
+EN: How can you increment the value of a POSIX semaphore?
+sem_post()
+
+
+
+
+
+
+EN: What can you do as a software developer to prevent deadlocks? Justify your answer.
+
+
+Lock Ordering: Acquire multiple locks in a predefined order to avoid circular waits.
+Justification: Ensures a consistent lock acquisition sequence, preventing circular wait conditions.
+
+Lock Timeout: Use timeouts for lock acquisition to prevent indefinite waiting.
+Justification: Allows threads to give up and retry, preventing indefinite blocking and potential deadlocks.
+
+Deadlock Detection: Implement periodic checks to detect and resolve deadlocks.
+Justification: Identifies and addresses deadlocks dynamically, though it may add some performance overhead.
+
+Resource Allocation Order: Request resources in a specific hierarchical order to avoid circular dependencies.
+Justification: Prevents circular wait by ensuring a consistent order of resource acquisition.
+
+Single Lock for Multiple Resources: Use one lock to protect access to multiple resources, reducing lock complexity.
+Justification: Simplifies lock management and minimizes the chances of deadlocks by reducing the number of locks.
+
+Avoid Nested Locks: Minimize the use of nested locks to simplify lock management and prevent deadlocks.
+Justification: Reduces the risk of deadlocks by avoiding complex locking scenarios.
+
+Resource Preemption: Allow resources to be preempted and reassigned to other threads to break circular waits.
+Justification: Breaks circular wait conditions by reallocating resources, though it requires careful management to avoid data corruption.
+
+
+
+
+EN: What state transition will a process undergo when reading from a file?
+
+Running -> Blocked (waiting for I/O completion)
+Blocked -> Ready (I/O operation completes)
+Ready -> Running (process is scheduled to run again)
+
+
+
+EN: What is the content of the superblock on a Linux disk?
+
+The superblock on a Linux disk contains critical filesystem metadata
+Filesystem type,size,state.
+Block size.
+magic number that is unique and identifies the filesystem type
+Free Blocks Count:  Number of free blocks available.
+Free Inodes Count: Number of free inodes available.
+
+
+
+
+EN: Enumerate the data block adressing types of an i-node.
+
+
+
+
+
+Direct Addressing: Pointers directly to data blocks.
+Single Indirect Addressing: Pointer to an indirect block that points to data blocks.
+Double Indirect Addressing: Pointer to a block of pointers to indirect blocks, which in turn point to data blocks.
+Triple Indirect Addressing: Pointer to a block of pointers to double indirect blocks, which in turn point to single indirect blocks, which in turn point to data blocks.
+
+
+
+
+
+EN: Can you create a hard link towards a file on a different partition? Justify your answer.
+
+
+No, you cannot create a hard link to a file on a different partition because hard links must reside within the same filesystem, as they reference inodes that are unique and local to that specific filesystem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

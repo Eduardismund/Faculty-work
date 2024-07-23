@@ -1,0 +1,233 @@
+1. scrieti un grep care ia grupurile de cate 2 cuvinte, separate de un singur spatiu, care sunt formate doar din litere mici si fiecare cuvant contine cel putin 2 vocale
+
+
+grep -E '\b[a-z]*[aeiou][a-z]*[aeiou][a-z]*\b \b[a-z]*[aeiou][a-z]*[aeiou][a-z]*\b' filename
+
+
+
+2. scrieti 2 grep uri care iau liniile care nu au numarul de caractere multiplu al lui 3
+
+grep -E -v '^(.{3})*$' fisier
+
+
+
+3. scrieti un sed care inlocuieste prima aparitie a caracterului A cu caracterul B 
+
+???????????
+
+
+
+
+4. scrieti un awk care afiseaza liniile care au primul cuvant identic cu ultimul cuvant si al caror penultim cuvant are numar par de caractere
+
+awk '{if($1==$NF && lenght($(NF - 1))%2==0) print $0}'
+
+
+5. scrieti 3 moduri de a crea un fisier gol
+nano gol.txt
+touch numefisier.txt
+echo  >> numefisier.txt2
+
+
+
+
+6. scrieti 5 moduri de a verifica daca un string este gol(cu test)
+
+
+
+if [ -z "$string" ]; then
+    echo "Stringul este gol"
+
+if [ -n "$string" ]; then
+    echo "Stringul nu este gol"
+
+if [[ -z "$string" ]]; then
+    echo "Stringul este gol"
+
+string=""
+if [[ -n "$string" ]]; then
+    echo "Stringul nu este gol"
+
+string=""
+if [ "$(echo -n "$string" | wc -c)" -eq 0 ]; then
+    echo "Stringul este gol"
+
+
+
+
+
+
+7. afisati ierarhia proceselor a urmatorului cod:
+for(int i = 0; i < 3; i++)
+    if (fork() != 0)
+        wait();
+
+P->P0->P1->P2
+
+
+8. scrieti ce afiseaza codul:
+execlp(“expr”,”expr”,”a”,”+”,”1”);
+printf(“xyz\n”);
+
+
+
+9. schitati o implementare a functiilor popen si pclose
+
+The popen() function shall execute the command specified by the string command. 
+It shall create a pipe between the calling program and the executed command, and shall return a pointer to a stream that can be used to either 
+read from or write to the pipe.
+
+
+The pclose() function closes a stream that was opened by popen(), 
+waits for the command specified as an argument in popen() to terminate, 
+and returns the status of the process that was running the shell command.
+
+
+
+
+
+
+10. cate FIFO pot fi deschise de catre un fisier daca fiecare dintre acele FIFO-uri va avea capatul celalalt deschis de catre un alt proces?
+
+Numărul de FIFO-uri pe care un proces le poate deschide este limitat de numărul maxim de descriptoare de fișiere permis pentru acel proces. 
+Acest număr poate fi verificat și ajustat folosind ulimit.
+
+
+
+
+11. cand am dori sa folosim execl si cand am dori sa folosim execv?
+
+
+Când să folosești execl:
+	Atunci când ai un număr mic de argumente, bine definite și cunoscute dinainte.
+	Când scrii scripturi sau programe simple unde claritatea și concizia sunt mai importante decât flexibilitatea.
+	Când argumentele sunt constante și nu se schimbă la runtime.
+Când să folosești execv:
+	Când ai nevoie să generezi lista de argumente dinamic, poate pe baza unor intrări de la utilizator sau a altor calcule.
+	Când argumentele sunt stocate într-un array și nu sunt cunoscute la momentul scrierii codului.
+	Când trebuie să treci un număr variabil de argumente la programul de executat.
+
+
+
+
+12. definiti notiunea de sectiune critica
+
+
+a critical section refers to a segment of code that is executed by multiple concurrent threads or processes
+and where shared resources are accessed and modified.
+
+
+
+
+13. scrieti 3 apeluri de functii care asigura "mutual exclusion"
+
+pthread_mutex_t mutex;
+
+pthread_mutex_lock(&mutex);
+// Critical section: only one thread can execute this part at a time
+pthread_mutex_unlock(&mutex);
+
+
+std::mutex mtx;
+
+{
+    std::unique_lock<std::mutex> lock(mtx);
+// Critical section: only one thread can execute this part at a time
+} // `lock` goes out of scope and automatically unlocks the mutex
+
+
+using a binaty semaphore initialized with 1
+
+
+14. care sunt consecintele inlocuirii lui pthread_mutex_lock cu sem_post in cod?
+
+
+
+
+Loss of Mutual Exclusion:
+
+pthread_mutex_lock ensures that only one thread can access the critical section at a time.
+Replacing it with sem_post would not provide mutual exclusion. Instead, it would signal the semaphore, 
+potentially allowing multiple threads to proceed simultaneously.
+
+
+Incorrect Synchronization:
+
+Semaphores are generally used for signaling and resource counting, not for mutual exclusion.
+Using sem_post instead of pthread_mutex_lock would disrupt the synchronization logic. For example, 
+sem_post without a corresponding sem_wait would lead to an unbalanced semaphore count.
+
+
+Race Conditions:
+
+The critical section could be accessed by multiple threads concurrently, leading to race conditions.
+Shared resources might be accessed or modified simultaneously, causing data corruption or inconsistencies.
+
+
+Deadlocks:
+
+The original synchronization logic might involve proper usage of pthread_mutex_lock and pthread_mutex_unlock to prevent deadlocks.
+Replacing pthread_mutex_lock with sem_post would break this logic, potentially leading to deadlocks or livelocks if threads 
+wait indefinitely for resources that are never properly signaled.
+
+
+15. definiti un semafor binar si explicati cum functioneaza
+
+
+A binary semaphore is a simple and effective synchronization mechanism used to ensure mutual exclusion 
+by allowing only one thread or process to access a critical section at a time. It is initialized to 1, 
+and the wait (P) and signal (V) operations are used to control access to the shared resource.
+
+
+
+
+16. era ceva cod, nu am cum sa il scriu pe tot, vad daca cineva l a postat pe grup
+
+
+
+17. scrieti un mod de a preveni deadlock
+
+Try to avoid situations where a thread locks multiple mutexes. 
+If you must lock multiple mutexes, always lock them in a consistent order.
+
+
+18. prin ce stare(gen ready, wait, swap, etc) trece un proces cand apelam pthread_join?
+
+When pthread_join is called, the process (or thread) transitions from running to waiting (blocked), then to ready, and finally back to running.
+
+
+
+19. daca avem B drept block size si A drept address size, cate adrese o sa aiba un double indirect dintr-un i-node?
+
+
+Single Indirect Block:
+
+A single indirect block can hold B / A addresses (since each address is A bytes, and the block size is B bytes).
+Double Indirect Block:
+
+A double indirect block contains addresses of single indirect blocks.
+Each single indirect block can address B / A data blocks.
+Therefore, a double indirect block can address (B / A) * (B / A) data blocks.
+
+
+
+
+20. ce se intampla cu continutul directorului in care montam o partitie?
+
+When you mount a partition on a directory, the directory’s existing contents are hidden and temporarily replaced with the 
+contents of the mounted partition. These original contents remain unchanged and are restored once the partition is unmounted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
