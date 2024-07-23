@@ -1,5 +1,5 @@
 # Eth
-The most stressful exam juding from the demanding period. During the same week, we also had exams for Graph Algorithms and Geometry,
+The most stressful exam in a demanding period. During the same week, we also had exams for Graph Algorithms and Geometry,
 
 ## 1. Inversarea ordinii cuvintelor folosind thread-uri
 
