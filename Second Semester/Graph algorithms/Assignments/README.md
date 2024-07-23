@@ -3,7 +3,7 @@
 The assignments contributed to the final grade, their median having a 40% impact on the final grade. They were solved one after another in the same project.
 
 I've also solved the bonus which required implementing the first assignment in C++ (adding approximately 0.5 points to the **final** grade).
-## Assignment Grades
+## Assignments information
 
 - **Assignment 1**:
   - **Task:** Design and implement an abstract data type directed graph with operations for getting the number of vertices, iterating over vertices and edges, checking and retrieving edge existence and properties, modifying the graph (adding/removing vertices and edges), copying the graph, reading from and writing to a text file, and creating a random graph.
