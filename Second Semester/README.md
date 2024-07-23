@@ -17,7 +17,7 @@ Here is a summary of the grades received for each subject along with the final g
 - **Geometry**: Grade - 10/10
 - **Graph algorithms**: Grade - 10/10
 - **Object oriented programming**: Grade - 10/10
-- **Operating Systems**: Grade - 10/10
+- **Operating Systems**: Grade - 8/10
 
 **Final Grade for the Semester**: 9.33/10
 
